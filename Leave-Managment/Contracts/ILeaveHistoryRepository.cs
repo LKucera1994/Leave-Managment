@@ -2,7 +2,8 @@
 
 namespace Leave_Managment.Contracts
 {
-    public interface ILeaveHistoryRepository: IRepositoryBase<LeaveHistory>
+    public interface ILeaveHistoryRepository : IRepositoryBase<LeaveHistory>
     {
+    }
         
 }

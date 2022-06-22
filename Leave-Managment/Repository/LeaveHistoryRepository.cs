@@ -14,33 +14,38 @@ namespace Leave_Managment.Repository
         }
         public bool Create(LeaveHistory entity)
         {
-            throw new NotImplementedException();
+            _db.Add(entity);
+            return Save();
         }
 
         public bool Delete(LeaveHistory entity)
         {
-            throw new NotImplementedException();
+            _db.Remove(entity);
+            return Save();
         }
 
         public ICollection<LeaveHistory> FindAll()
         {
-            throw new NotImplementedException();
+            return _db.LeaveHistories.ToList();
         }
 
         public LeaveHistory FindById(int id)
         {
-            throw new NotImplementedException();
+#pragma warning disable CS8603 // Possible null reference return.
+            return _db.LeaveHistories.Find(id);
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
 
         public bool Save()
         {
-            throw new NotImplementedException();
+            return _db.SaveChanges()>0;
         }
 
         public bool Update(LeaveHistory entity)
         {
-            throw new NotImplementedException();
+            _db.Update(entity);
+            return Save();
         }
     }
 }
