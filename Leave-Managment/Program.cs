@@ -1,8 +1,11 @@
+using AutoMapper;
 using Leave_Managment.Contracts;
 using Leave_Managment.Data;
+using Leave_Managment.Mappings;
 using Leave_Managment.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,8 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+builder.Services.AddAutoMapper(typeof(Maps))
 
 //Add references for Repository and Contracts to Program file
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
