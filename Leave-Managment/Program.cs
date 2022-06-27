@@ -15,7 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddAutoMapper(typeof(Maps))
+builder.Services.AddAutoMapper(typeof(Maps));
 
 //Add references for Repository and Contracts to Program file
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
