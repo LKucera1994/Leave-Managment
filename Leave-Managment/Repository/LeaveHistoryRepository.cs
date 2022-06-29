@@ -36,6 +36,11 @@ namespace Leave_Managment.Repository
 #pragma warning restore CS8603 // Possible null reference return.
         }
 
+        public bool isExists(int id)
+        {
+            var exists = _db.LeaveHistories.Any(q => q.Id == id);
+            return exists;
+        }
 
         public bool Save()
         {
